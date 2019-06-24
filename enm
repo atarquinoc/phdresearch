@@ -1,0 +1,50 @@
+##Correlations for Ecological Niche Modelling in Tympanoctomys
+#Current scenarios
+current<- read.delim("C:/Users/USUARIO/OneDrive/Spatial_ecology_RVR/PAPERS/JM/Supplementary_files/currentclimate.txt")
+View(current)
+library(Hmisc)
+
+vc1 <- varclus(as.matrix(current[,c(5:60)]))
+plot(vc1)
+
+#Past scenarios Mid Holocene CCMS4
+MHCCSM <- read.delim("C:/Users/USUARIO/OneDrive/Spatial_ecology_RVR/PAPERS/JM/Supplementary_files/MHCCSM4.txt")
+View(MHCCSM)
+vc2 <- varclus(as.matrix(MHCCSM4[,c(1:21)]))
+plot(vc2)
+
+#Past scenarios Mid Holocene MIROC ESM
+MHMIROC <- read.delim("C:/Users/USUARIO/OneDrive/Spatial_ecology_RVR/PAPERS/JM/Supplementary_files/MHMIROC.txt")
+View(MHMIROC)
+vc3<- varclus(as.matrix(MHMIROC[,c(1:21)]))
+plot(vc3)
+
+#Future scenarios CCMS4 RCP 26 Year 2070
+RCP26CCSM70 <- read.delim("C:/Users/USUARIO/OneDrive/Spatial_ecology_RVR/PAPERS/JM/Supplementary_files/RCP26CCSM42070.txt")
+View(RCP26CCSM70)
+vc4 <- varclus(as.matrix(RCP26CCSM70[,c(1:22)]))
+plot(vc4)
+
+#Future scenarios MIROC ESM RCP 26
+RCP26MIROC70 <- read.delim("C:/Users/USUARIO/OneDrive/Spatial_ecology_RVR/PAPERS/JM/Supplementary_files/RCP26MIROC2070.txt")
+View(RCP26MIROC70)
+vc5 <- varclus(as.matrix(RCP26MIROC70[,c(1:22)]))
+plot(vc5)
+
+#Future scenarios CCMS4 RCP 85
+library(readxl)
+RCP85CCSM70 <- read_excel("C:/Users/USUARIO/OneDrive/Spatial_ecology_RVR/PAPERS/JM/Supplementary_files/RCP85CCSM42070.xlsx", sheet = "Hoja1")
+View(RCP85CCSM70)
+
+library(Hmisc)
+vc6 <- varclus(as.matrix(RCP85CCSM70[,c(1:45)]))
+plot(vc6)
+
+#Future scenarios MIROC ESM RCP 85
+library(readxl)
+RCP85MIROC70 <- read_excel("C:/Users/USUARIO/OneDrive/Spatial_ecology_RVR/PAPERS/JM/Supplementary_files/RCP85MIROC2070.xlsx", sheet = "Hoja1")
+View(RCP85MIROC70)
+
+library(Hmisc)
+vc7 <- varclus(as.matrix(m85cc[,c(1:44)]))
+plot(vc7)
